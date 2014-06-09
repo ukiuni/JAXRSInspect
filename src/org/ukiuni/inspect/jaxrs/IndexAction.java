@@ -9,7 +9,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.annotation.XmlRootElement;
+
+import org.ukiuni.inspect.jaxrs.entity.MyData;
 
 @Path("/")
 public class IndexAction {
@@ -32,37 +33,5 @@ public class IndexAction {
 		myData.setMessage(message);
 		System.out.println("message = " + message);
 		// put Message
-	}
-
-	@XmlRootElement
-	public static class MyData {
-		private long id;
-		private String message;
-
-		public MyData() {
-
-		}
-
-		public MyData(long id, String message) {
-			super();
-			this.id = id;
-			this.message = message;
-		}
-
-		public long getId() {
-			return id;
-		}
-
-		public void setId(long id) {
-			this.id = id;
-		}
-
-		public String getMessage() {
-			return message;
-		}
-
-		public void setMessage(String message) {
-			this.message = message;
-		}
 	}
 }
