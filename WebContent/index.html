@@ -1,0 +1,17 @@
+<input type="text" id="messageArea" placeholder="message" />
+<button onclick="send()">put message</button>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function send() {
+		var message = document.getElementById("messageArea").value;
+		if ("" == message) {
+			return;
+		}
+		$.post("api/putMessage", {
+			"message" : message
+		}, function() {
+			alert("posted");
+			document.getElementById("messageArea").value = "";
+		})
+	}
+</script>
